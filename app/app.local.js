@@ -25,7 +25,7 @@
      */
     const { PostgreSQL } = require('mql2');
     const { CONNECT } = PostgreSQL;
-    const dbInfo = require('../config/dbInfo');
+    const dbInfo = require('../config/db_info');
     const POOL = CONNECT({
         host: dbInfo.host,
         user: dbInfo.user,
@@ -86,7 +86,7 @@
     });
 
     require('./route');
-    //scheduler();
+    scheduler();
     /**
      * Error handling middle ware
      */

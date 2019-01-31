@@ -6,7 +6,7 @@ const {ses, mailOption} = require('../../module/back/util/ses');
 
 const scheduler = () => {
     const now = new Date();
-    cron.schedule('0 0 * * *', async () =>
+    //cron.schedule('0 0 * * *', async () =>
         go(
             QUERY`SELECT * FROM campaign`,
             map(async campaign => {
@@ -98,7 +98,7 @@ const scheduler = () => {
                     }
                 }
             })
-        )
+       // )
     )
 };
 
