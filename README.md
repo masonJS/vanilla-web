@@ -11,7 +11,7 @@
 
 ## Pre - Installation & Setup
 - aws-cli ( Credential는 요청 후 발급 ) / **Optional** / For serverless deploy
-- nvm (Node 8.10) / **Optional** / But should required node8.10 version
+- nvm (Node 12.10) / **Optional** / But should required node12.10 version
 - npm module - supervisor / **Optional** / For use "auto-local" script
 ```
 > npm i -g supervisor
