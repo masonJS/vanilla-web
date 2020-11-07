@@ -1,4 +1,4 @@
-const awsS3 = require('../../../module/back/util/fileUpload.js');
+const awsS3 = require('../../module/back/util/fileUpload.js');
 
 app.get('/advertiser/adv_campaign_modify', async (req, res) => {
     if (!req.session.user || req.session.user.auth !== 'advertiser') return res.redirect('/common/signin');

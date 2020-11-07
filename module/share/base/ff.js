@@ -375,6 +375,7 @@
   const extend = baseExtend(tap(set2));
   const defaults = baseExtend(tap((obj, kv) => has(kv[0], obj) || set2(obj, kv)));
 
+
   global.FF = {
     log,
 

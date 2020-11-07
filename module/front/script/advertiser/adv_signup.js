@@ -36,7 +36,7 @@
                         pw: pw,
                         info: JSON.stringify(info),
                         auth: 'advertiser',
-                        created_at: new Date()
+                        created_at: currentDate('YYYY-MM-DD HH:mm:ss'),
                     }
                 },
                 $.post('/api/advertiser/adv_signup'),

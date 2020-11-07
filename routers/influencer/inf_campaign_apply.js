@@ -1,4 +1,4 @@
-const {ses, mailOption} = require('../../../module/back/util/ses');
+const {ses, mailOption} = require('../../module/back/util/ses');
 
 app.get('/influencer/inf_campaign_apply', async (req, res) => {
     if (!req.session.user || req.session.user.auth !== 'influencer') return res.redirect('/common/signin');

@@ -1,5 +1,5 @@
-const getHash = require('../../../module/back/util/encryption');
-const { get } = require('../../../module/back/util/request');
+const getHash = require('../../module/back/util/encryption');
+const { get } = require('../../module/back/util/request');
 
 app.get('/influencer/inf_my_info', async (req, res) => {
     if (!req.session.user || req.session.user.auth !== 'influencer') return res.redirect('/common/signin');

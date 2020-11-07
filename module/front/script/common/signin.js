@@ -26,9 +26,6 @@
                     .case('advertiser')(
                         _ => location.href = '/advertiser/adv_campaign_management'
                     )
-                    // .case('admin')(
-                    //     _ => location.href = '/admin/'
-                    // )
                     .else(
                         _ => location.href = '/'
                     )

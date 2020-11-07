@@ -1,5 +1,5 @@
-!function(global){
 
+!function(global){
     const formatFrontDate = (date) => {
         const dateFormat = new Date(date);
         return dateFormat.getFullYear() + '-' +
@@ -127,6 +127,14 @@
     }
 
     global.Formatter = {
-        formatFrontDate, formatBackDate, isEmptyObj, formatStateClass, formatState, sortObjKey, updateDB, getFileName, getHashTag
+      formatFrontDate,
+      formatBackDate,
+      isEmptyObj,
+      formatStateClass,
+      formatState,
+      sortObjKey,
+      updateDB,
+      getFileName,
+      getHashTag
     }
 }(typeof window != 'undefined'? window : global);

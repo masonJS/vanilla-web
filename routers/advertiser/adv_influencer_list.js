@@ -1,9 +1,9 @@
-const { get } = require('../../../module/back/util/request');
+const { get } = require('../../module/back/util/request');
 
 app.get('/advertiser/adv_influencer_list', async (req, res) => {
     if (!req.session.user || req.session.user.auth !== 'advertiser') return res.redirect('/common/signin');
     const [user] = await QUERY`SELECT * FROM users where id = ${req.session.user.id}`;
-    
+
     const infList = await QUERY`SELECT id, info, sns_info FROM users WHERE auth = 'influencer' and sns_info is not null`;
 
     res.send(TMPL.layout.hnmf({
@@ -148,7 +148,7 @@ app.post('/api/advertiser/adv_influencer_list', async (req, res) => {
     // 해당 id의 instagram id 와 instagram access token 을 얻기위해 데이터베이스 조회
     let [userSnsInfo] = await QUERY`SELECT sns_info FROM users WHERE id = ${id}`;
     if (!userSnsInfo) {res.json({"res":"fail to read database"}); return;}
-    
+
     // 얻은 id 와 access token 을 통해 facebook Graph api에 필요한 정보 요청
     let instagramMedia = await getInstagramMedia(userSnsInfo.sns_info.instagram_id, userSnsInfo.sns_info.instagram_access_token, 7).then(data => data);
     if (!instagramMedia) {res.json({"res":"fail to get API return"}); return;}

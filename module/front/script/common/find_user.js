@@ -25,6 +25,7 @@
                     .case(a => a === 'No content')(_ => alert('입력란을 채워주세요'))
                     .else(_ => a),
                 b => b.text(),
+                tap(log),
                 match
                     .case('id')(_ => alert('존재하지 않은 사용자입니다.'))
                     .else(_ => alert('서버 에러입니다.'))

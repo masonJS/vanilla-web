@@ -1,12 +1,12 @@
 const isSameDay = require('date-fns/is_same_day');
 const isYesterDay = require('date-fns/is_yesterday');
 const cron = require('node-cron');
-const {ses, mailOption} = require('../../module/back/util/ses');
+const {ses, mailOption} = require('../module/back/util/ses');
 
 
 const scheduler = () => {
     const now = new Date();
-    //cron.schedule('0 0 * * *', async () =>
+    //cron.jobs('0 0 * * *', async () =>
         go(
             QUERY`SELECT * FROM campaign`,
             map(async campaign => {

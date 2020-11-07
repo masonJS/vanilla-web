@@ -1,4 +1,4 @@
-const fbClientInfo = require('../../../config/fb_client_info');
+// const fbClientInfo = require('../../../config/fb_client_info');
 
 app.get('/influencer/inf_signup_connect_instagram', (req, res) => {
     res.send(TMPL.layout.hnmf({
@@ -142,8 +142,6 @@ app.get('/influencer/inf_signup_connect_instagram', (req, res) => {
                     return new Promise((resolve, reject) => {
                         FB.api('/oauth/access_token', 'GET', {
                             "grant_type": "fb_exchange_token",
-                            "client_id": "${fbClientInfo.clientId}",
-                            "client_secret": "${fbClientInfo.clientSecret}",
                             "fb_exchange_token":accessToken
                         }, response => resolve(response.access_token));
                     });

@@ -1,4 +1,4 @@
-const getHash = require('../../../module/back/util/encryption');
+const getHash = require('../../module/back/util/encryption');
 
 app.get('/advertiser/adv_my_info', async (req, res) => {
     if (!req.session.user || req.session.user.auth !== 'advertiser') return res.redirect('/common/signin');

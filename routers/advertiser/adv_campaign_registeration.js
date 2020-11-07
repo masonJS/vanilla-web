@@ -1,7 +1,7 @@
 const multer = require('multer');
 const upload = multer({storage: multer.memoryStorage()});
 const cpUpload = upload.fields([{name: 'main_img'}, {name: 'sub_img'}]);
-const awsS3 = require('../../../module/back/util/fileUpload.js');
+const awsS3 = require('../../module/back/util/fileUpload.js');
 
 app.get('/advertiser/adv_campaign_registration', async (req, res) => {
     if (!req.session.user || req.session.user.auth !== 'advertiser') return res.redirect('/common/signin');

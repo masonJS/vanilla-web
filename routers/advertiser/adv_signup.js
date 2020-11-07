@@ -1,4 +1,4 @@
-const getHash = require('../../../module/back/util/encryption');
+const getHash = require('../../module/back/util/encryption');
 
 app.get('/advertiser/adv_signup', (req, res) => {
 
@@ -163,14 +163,13 @@ app.post('/api/advertiser/adv_signup', (req, res, next) => {
         req.body,
         a => {
             a.pw = getHash(a.pw);
-            return a;
+          return a
         },
         pipeT(
-            b => QUERY`INSERT INTO users ${VALUES(b)} RETURNING info`,
-            first,
-            c => c.info.ceo_name,
+            b => QUERY`INSERT INTO users ${VALUES(b)}`,
             res.json
         ).catch(
+          tap(log),
             match
                 .case({ constraint: 'tb_user_pkey' })(
                     _ => 'id'
